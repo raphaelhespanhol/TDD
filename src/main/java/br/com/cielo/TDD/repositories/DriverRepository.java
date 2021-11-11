@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface DriverRepository extends JpaRepository<Driver, Long> {
 
+    List<Driver> findAllByName(final String name);
+
     List<Driver> findAllByWashingDateBetween(final Timestamp start, final Timestamp end);
+
 }

@@ -1,6 +1,7 @@
-package br.com.cielo.TDD.usecases;
+package br.com.cielo.TDD.unit.usecases;
 
 import br.com.cielo.TDD.repositories.DriverRepository;
+import br.com.cielo.TDD.usecases.CreateDriver;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UpdateDriverUnitTest {
+public class CreateDriverUnitTest {
 
     @InjectMocks
-    private UpdateDriver updateDriver;
+    private CreateDriver createDriver;
 
     @Mock
     private DriverRepository driverRepository;
@@ -25,7 +26,7 @@ public class UpdateDriverUnitTest {
     }
 
     @Test
-    public void shouldUpdateDriver() {
+    public void shouldCreateDriver() {
 
     }
 }

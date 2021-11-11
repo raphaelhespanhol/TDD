@@ -1,5 +1,6 @@
-package br.com.cielo.TDD.utils;
+package br.com.cielo.TDD.unit.utils;
 
+import br.com.cielo.TDD.utils.DateUtils;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

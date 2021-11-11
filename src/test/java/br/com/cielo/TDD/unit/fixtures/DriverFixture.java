@@ -1,4 +1,4 @@
-package br.com.cielo.TDD.fixtures;
+package br.com.cielo.TDD.unit.fixtures;
 
 import br.com.cielo.TDD.entities.Driver;
 import br.com.cielo.TDD.entities.enums.GenderType;
@@ -15,7 +15,7 @@ public class DriverFixture {
                 .id(3L)
                 .isUber(true)
                 .lastUpdateDate(DateUtils.getDateNowToday())
-                .name("Pedro Henrique")
+                .name("Raphael Hespanhol")
                 .vehicleType(VehicleType.JIPE)
                 .washingDate(DateUtils.getDateFirstDayThisWeek())
                 .washingType(WashingType.COMPLETA)

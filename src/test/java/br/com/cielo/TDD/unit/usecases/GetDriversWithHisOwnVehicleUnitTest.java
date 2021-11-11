@@ -1,6 +1,7 @@
-package br.com.cielo.TDD.usecases;
+package br.com.cielo.TDD.unit.usecases;
 
 import br.com.cielo.TDD.repositories.DriverRepository;
+import br.com.cielo.TDD.usecases.GetDriversWithHisOwnVehicle;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

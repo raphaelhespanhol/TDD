@@ -1,6 +1,7 @@
-package br.com.cielo.TDD.usecases;
+package br.com.cielo.TDD.unit.usecases;
 
 import br.com.cielo.TDD.repositories.DriverRepository;
+import br.com.cielo.TDD.usecases.GetGroupedWashesByDate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GetGroupedVehiclesUnitTest {
+public class GetGroupedWashesByDateUnitTest {
 
     @InjectMocks
-    private GetGroupedVehicles getGroupedVehicles;
+    private GetGroupedWashesByDate getGroupedWashesByDate;
 
     @Mock
     private DriverRepository driverRepository;
@@ -25,7 +26,7 @@ public class GetGroupedVehiclesUnitTest {
     }
 
     @Test
-    public void shouldGetGroupedVehicles() {
+    public void shouldGetGroupedWashesByDate() {
 
     }
 }

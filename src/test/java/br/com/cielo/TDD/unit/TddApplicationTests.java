@@ -1,4 +1,4 @@
-package br.com.cielo.TDD;
+package br.com.cielo.TDD.unit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

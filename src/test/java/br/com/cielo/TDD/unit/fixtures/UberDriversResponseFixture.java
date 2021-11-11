@@ -1,4 +1,4 @@
-package br.com.cielo.TDD.fixtures;
+package br.com.cielo.TDD.unit.fixtures;
 
 import br.com.cielo.TDD.entities.response.UberDriversResponse;
 

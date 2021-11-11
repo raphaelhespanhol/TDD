@@ -1,5 +1,6 @@
-package br.com.cielo.TDD.controllers;
+package br.com.cielo.TDD.unit.controllers;
 
+import br.com.cielo.TDD.controllers.CarWashController;
 import br.com.cielo.TDD.usecases.CreateDriver;
 import br.com.cielo.TDD.usecases.GetDriversWithHisOwnVehicle;
 import br.com.cielo.TDD.usecases.GetGroupedVehicles;
