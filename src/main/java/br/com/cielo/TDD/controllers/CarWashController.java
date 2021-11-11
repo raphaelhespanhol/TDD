@@ -1,5 +1,6 @@
 package br.com.cielo.TDD.controllers;
 
+import br.com.cielo.TDD.entities.Driver;
 import br.com.cielo.TDD.entities.request.DriverRequest;
 import br.com.cielo.TDD.entities.response.DriverResponse;
 import br.com.cielo.TDD.entities.response.DriversOwnVehicleResponse;
@@ -8,6 +9,7 @@ import br.com.cielo.TDD.entities.response.GroupedVehiclesResponse;
 import br.com.cielo.TDD.entities.response.GroupedWashesByDateResponse;
 import br.com.cielo.TDD.entities.response.UberDriversResponse;
 import br.com.cielo.TDD.usecases.CreateDriver;
+import br.com.cielo.TDD.usecases.GetDriverByName;
 import br.com.cielo.TDD.usecases.GetDriversWithHisOwnVehicle;
 import br.com.cielo.TDD.usecases.GetGroupedVehicles;
 import br.com.cielo.TDD.usecases.GetGroupedVehiclesByDate;
@@ -38,6 +40,9 @@ public class CarWashController {
 
     @Autowired
     private GetDriversWithHisOwnVehicle getDriversWithHisOwnVehicle;
+
+    @Autowired
+    private GetDriverByName getDriverByName;
 
     @Autowired
     private GetGroupedVehicles getGroupedVehicles;
@@ -95,5 +100,11 @@ public class CarWashController {
     public ResponseEntity<DriverResponse> updateDriver(@PathVariable final long id,
                                                        @RequestBody final DriverRequest driverRequest) {
         throw new NotImplementedException();
+    }
+
+    @GetMapping("/get-driver-by-name/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Driver> findByName(@PathVariable String name) {
+        return ResponseEntity.ok(getDriverByName.findDriverByName(name));
     }
 }
