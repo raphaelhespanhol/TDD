@@ -3,6 +3,7 @@ package br.com.cielo.TDD.integration.repositories;
 import br.com.cielo.TDD.entities.Driver;
 import br.com.cielo.TDD.repositories.DriverRepository;
 import br.com.cielo.TDD.unit.fixtures.DriverFixture;
+import br.com.cielo.TDD.utils.DateUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,4 +57,34 @@ public class DriverRepositoryIntegrationTest {
         Assert.assertEquals(DriverFixture.defaultValues().getName(), driverList.get(0).getName());
     }
 
+    @Test
+    public void whenSaved_thenFindsByCustomName() {
+        driverRepository.save(DriverFixture.defaultValues());
+        final Driver driver = driverRepository.findByNameCustomQuery("Hespanhol");
+
+        Assert.assertNotNull(driver);
+        Assert.assertEquals(DriverFixture.defaultValues().getName(), driver.getName());
+    }
+
+    @Test
+    public void whenSaved_thenFindAllByWashingDateBetweenCustomQuery() {
+        driverRepository.save(DriverFixture.defaultValues());
+        final List<Driver> driverList = driverRepository.findAllByWashingDateBetweenCustomQuery(
+                DateUtils.getDateFirstDayOfTheMonth(),
+                DateUtils.getDateNowToday());
+
+        Assert.assertNotNull(driverList);
+        Assert.assertTrue(driverList.size() > 0);
+    }
+
+    @Test
+    public void whenSaved_thenFindAllByWashingDateBetween() {
+        driverRepository.save(DriverFixture.defaultValues());
+        final List<Driver> driverList = driverRepository.findAllByWashingDateBetween(
+                DateUtils.getDateFirstDayOfTheMonth(),
+                DateUtils.getDateNowToday());
+
+        Assert.assertNotNull(driverList);
+        Assert.assertTrue(driverList.size() > 0);
+    }
 }
